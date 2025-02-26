@@ -1,35 +1,32 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './index.css'
 
-function App() {
-  const [count, setCount] = useState(0)
+/* Pages */
+/*
 
+/ (where a user is at a kahoot like enter code screen)
+/login (where a user can sign in or sign up with google or linkedin oauth)
+/events (where a user can see all the events they attended and where they can make a new event)
+/events/:id/live (where a user can see the live event)
+/feedback (where a user can give feedback on the app)
+
+*/
+
+// have some protected routes using an outlet
+// make most of the logic happen in the pages
+
+// todo: reorganize the pages
+
+function App() {
   return (
-    <main className='bg-gray-100 p-4'>
-      <div className='bg-red-500 text-white p-4 m-4'>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </main>
-  )
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
+    </Router>
+  );
 }
 
-export default App
+export default App;
