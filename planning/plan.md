@@ -1,3 +1,19 @@
+idea -
+
+I was thinking it would be like kahoot, on the frontend you put in a code for an event, then in that event you can make it such that it decides groups based on the total amount of people who entered the code, and how many groups you want, and then it randomly assigns you a group until they are filled up
+
+alternatively you should have the option to have one on one networking and so you might have a mode where everyone just gets a number and you get randomly tagged with another person
+
+the app might also let you put in a name, your linkedin, your interests, and a short description which can all act as an ice breaker and stream line networking
+
+the app requires no logging in, but that could be an option, so the info entered is saved in the future and reused, it's a simple app, and it would have a way to manage the event based on groups or one on one networking and would likely let you collect data from people put in which could help with tracking and seeing who networked with who, possibly 
+that's my rough idea at least, it would also have a cool roulette animation for you getting randomly assigned to someone to network with or a group to network with
+people who make an event would need to login so they can manage it, perhaps
+I think I'd just go with a simple react and node express full stack thing, with postgres as the db
+and just make it responsive instead of an actual app, so everyone can access it from the web
+
+---
+
 - main
 We will have a main page where a user can enter an event code to join an event
 
