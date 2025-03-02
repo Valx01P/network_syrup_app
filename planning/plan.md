@@ -51,3 +51,9 @@ person, they will just not be included in the next one / shuffle because they wo
 getting assigned they'd want to
 an organizer can end the current networking for participants and take them back into the waiting room until a
 new round of networking starts, or they can close the room for everyone if the event is over
+
+
+Network syrup features:
+
+Live Networking sessions
+Resume generator
