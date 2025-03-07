@@ -1,32 +1,26 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import './index.css'
+import { BrowserRouter, Routes, Route } from "react-router-dom"
+import { Suspense, lazy } from 'react'
 
-/* Pages */
-/*
+const Home = lazy(() => import("./pages/Home"))
+const Two = lazy(() => import("./pages/Two"))
+// const Navbar = lazy(() => import("./components/Navbar"))
+const NotFound = lazy(() => import("./pages/NotFound"))
 
-/ (where a user is at a kahoot like enter code screen)
-/login (where a user can sign in or sign up with google or linkedin oauth)
-/events (where a user can see all the events they attended and where they can make a new event)
-/events/:id/live (where a user can see the live event)
-/feedback (where a user can give feedback on the app)
+const App = () => {
 
-*/
-
-// have some protected routes using an outlet
-// make most of the logic happen in the pages
-
-// todo: reorganize the pages
-
-function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
-      </Routes>
-    </Router>
-  );
+    <BrowserRouter>
+      {/* <Navbar /> */}
+      <Suspense fallback={<div>Loading...</div>}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/two" element={<Two />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </Suspense>
+    </BrowserRouter>
+  )
 }
 
-export default App;
+
+export default App

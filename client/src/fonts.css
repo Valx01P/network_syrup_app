@@ -1,0 +1,72 @@
+@font-face {
+  font-family: 'Bungee Inline';
+  src: url('/fonts/bungee-inline/BungeeInline-Regular.woff2') format('woff2'),
+      url('/fonts/bungee-inline/BungeeInline-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Cabin Sketch';
+  src: url('/fonts/cabin-sketch/CabinSketch-Regular.woff2') format('woff2'),
+      url('/fonts/cabin-sketch/CabinSketch-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Cabin Sketch';
+  src: url('/fonts/cabin-sketch/CabinSketch-Bold.woff2') format('woff2'),
+      url('/fonts/cabin-sketch/CabinSketch-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('/fonts/poppins/Poppins-Bold.woff2') format('woff2'),
+      url('/fonts/poppins/Poppins-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('/fonts/poppins/Poppins-Medium.woff2') format('woff2'),
+      url('/fonts/poppins/Poppins-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('/fonts/poppins/Poppins-Black.woff2') format('woff2'),
+      url('/fonts/poppins/Poppins-Black.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('/fonts/poppins/Poppins-Regular.woff2') format('woff2'),
+      url('/fonts/poppins/Poppins-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('/fonts/poppins/Poppins-Thin.woff2') format('woff2'),
+      url('/fonts/poppins/Poppins-Thin.woff') format('woff');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
