@@ -5,7 +5,12 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        bungee: ['"Bungee Inline"', 'cursive'],
+        cabin: ['"Cabin Sketch"', 'cursive'],
+        poppins: ['Poppins', 'sans-serif'],      }
+    },
   },
   plugins: [],
 }
