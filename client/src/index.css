@@ -12,6 +12,11 @@
   font-weight: 400;
 }
 
+.cabin-sketch-bold {
+  font-family: 'Cabin Sketch', cursive;
+  font-weight: 700;
+}
+
 .poppins-bold {
   font-family: 'Poppins', sans-serif;
   font-weight: 700;
@@ -59,4 +64,30 @@
     0 4px 0 rgba(0, 0, 0, 0.5),
     0 5px 0 rgba(0, 0, 0, 0.4),
     0 6px 0 rgba(0, 0, 0, 0.3);
+}
+
+.light-shadow {
+  box-shadow: 
+  0 5px 0 rgba(0, 0, 0, 0.2),
+  0 6px 0 rgba(0, 0, 0, 0.1);
+}
+
+
+/* Join Event */
+.input-1 {
+  background-color: #FFF6D7;
+  color: #000000;
+  border: 2px solid #909090;
+  border-radius: 10px;
+}
+
+.btn-submit-1 {
+  background-color: #262626;
+  color: #FFF;
+  border: 2px solid #565656;
+  border-radius: 10px;
+}
+
+.extra-round-border {
+  border-radius: 40px;
 }
