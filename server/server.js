@@ -8,11 +8,14 @@ import authRoutes from './routes/authRoutes.js'
 import userRoutes from './routes/userRoutes.js'
 import eventRoutes from './routes/eventRoutes.js'
 // Import the socket setup function
-import { initSockets } from './websockets/sockets.js'
+import { initSockets } from './websockets/index.js'
 
 dotenv.config()
 
 const app = express()
+
+// Create an HTTP server from the Express app
+const httpServer = http.createServer(app)
 
 app.use(cors(
   {
@@ -30,11 +33,8 @@ app.use('/api/auth', authRoutes)
 app.use('/api/users', userRoutes)
 app.use('/api/events', eventRoutes)
 
-// Create an HTTP server from the Express app
-const server = http.createServer(app)
-
 // Initialize Socket.IO on that server
-initSockets(server)
+initSockets(httpServer)
 
 // Start listening
 const PORT = process.env.PORT || 3000
