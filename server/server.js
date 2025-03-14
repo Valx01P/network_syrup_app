@@ -7,8 +7,9 @@ import cookieParser from 'cookie-parser'
 import authRoutes from './routes/authRoutes.js'
 import userRoutes from './routes/userRoutes.js'
 import eventRoutes from './routes/eventRoutes.js'
+import attendeeRoutes from './routes/attendeeRoutes.js'
 // Import the socket setup function
-import { initSockets } from './websockets/index.js'
+import { initSockets } from './sockets/index.js'
 
 dotenv.config()
 
@@ -17,13 +18,15 @@ const app = express()
 // Create an HTTP server from the Express app
 const httpServer = http.createServer(app)
 
-app.use(cors(
-  {
-    origin: 'http://localhost:5173', // React app
-    credentials: true
-  }
-))
+// Define CORS options - use the same for both Express and Socket.IO
+const corsOptions = {
+  origin: 'http://localhost:5173', // React app
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+}
 
+app.use(cors(corsOptions))
 app.use(cookieParser())
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
@@ -32,9 +35,10 @@ app.use(express.urlencoded({ extended: true }))
 app.use('/api/auth', authRoutes)
 app.use('/api/users', userRoutes)
 app.use('/api/events', eventRoutes)
+app.use('/api/attendees', attendeeRoutes)
 
 // Initialize Socket.IO on that server
-initSockets(httpServer)
+initSockets(httpServer, corsOptions)
 
 // Start listening
 const PORT = process.env.PORT || 3000

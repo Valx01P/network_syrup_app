@@ -5,7 +5,7 @@
   "description": "Network Syrup Server",
   "main": "server.js",
   "scripts": {
-    "initDB": "cd database && node initDB.js",
+    "initDB": "cd config && node initDB.js",
     "start": "npm run initDB && nodemon server.js"
   },
   "author": "",
