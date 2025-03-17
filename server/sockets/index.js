@@ -30,14 +30,10 @@ const initSockets = (httpServer, corsOptions) => {
     // Organizer event handlers
     socket.on('organizer:join', (data) => handleOrganizerJoin(io, socket, data));
     socket.on('organizer:leave', (data) => handleOrganizerLeave(io, socket, data));
-    socket.on('organizer:networking-start-one-on-one', (data) => 
-      organizerNetworkingStartOneOnOne(io, socket, data));
-    socket.on('organizer:networking-start-group', (data) => 
-      organizerNetworkingStartGroup(io, socket, data));
-    socket.on('organizer:networking-end', (data) => 
-      organizerNetworkingEnd(io, socket, data));
-    socket.on('organizer:end-event', (data) => 
-      organizerEndEvent(io, socket, data));
+    socket.on('organizer:networking-start-one-on-one', (data) => organizerNetworkingStartOneOnOne(io, socket, data));
+    socket.on('organizer:networking-start-group', (data) => organizerNetworkingStartGroup(io, socket, data));
+    socket.on('organizer:networking-end', (data) => organizerNetworkingEnd(io, socket, data));
+    socket.on('organizer:end-event', (data) => organizerEndEvent(io, socket, data));
     
     // Disconnect handler
     socket.on('disconnect', () => {
