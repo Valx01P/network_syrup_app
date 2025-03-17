@@ -1,25 +1,30 @@
-
-/*
-we need routes to get the user's profile
-this will allow us to show the user's profile
-*/
-
 import express from 'express'
 import userController from '../controllers/userController.js'
 import verifyJWT from '../middleware/verifyJWT.js'
 
 const router = express.Router()
 
-// display all users
-router.route('/')
-    .get(verifyJWT, userController.getAll)
+// Current user profile operations
+router.route('/me')
+  // Get current user profile
+  .get(verifyJWT, userController.getMe)
+  // Update user profile
+  .put(verifyJWT, userController.updateMe)
+  // Delete user account
+  .delete(verifyJWT, userController.deleteMe)
 
-// view any user by id
-// update your own user
-// delete your own user
+// Get user by ID (for public profiles)
 router.route('/:id')
-    .get(verifyJWT, userController.getOne)
-    .put(verifyJWT, userController.update)
-    .delete(verifyJWT, userController.delete)
+  .get(userController.getUserById)
+
+
+  // Get past events for current user
+router.route('/events/previously-attended')
+.get(verifyJWT, userController.getUserEvents)
+
+// Get created events for current user
+router.route('/events/you-created')
+.get(verifyJWT, userController.getUserCreatedEvents)
+
 
 export default router

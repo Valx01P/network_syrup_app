@@ -4,10 +4,7 @@ import cors from 'cors'
 import dotenv from 'dotenv'
 import cookieParser from 'cookie-parser'
 // Import your routes
-import authRoutes from './routes/authRoutes.js'
-import userRoutes from './routes/userRoutes.js'
-import eventRoutes from './routes/eventRoutes.js'
-import attendeeRoutes from './routes/attendeeRoutes.js'
+import httpRoutes from './routes/index.js'
 // Import the socket setup function
 import { initSockets } from './sockets/index.js'
 
@@ -26,16 +23,14 @@ const corsOptions = {
   allowedHeaders: ['Content-Type', 'Authorization']
 }
 
+// Middleware
 app.use(cors(corsOptions))
 app.use(cookieParser())
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
-// Hook up your routes
-app.use('/api/auth', authRoutes)
-app.use('/api/users', userRoutes)
-app.use('/api/events', eventRoutes)
-app.use('/api/attendees', attendeeRoutes)
+// Mount all routes under /api
+app.use('/api', httpRoutes)
 
 // Initialize Socket.IO on that server
 initSockets(httpServer, corsOptions)

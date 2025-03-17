@@ -37,10 +37,17 @@ POST — logout
 
 
 event routes
+GET — get event
 POST — create event
-PUT — update event
-DELETE — delete event
-POST — record attendance
+// POST - join event (user) (after onboarded (records the attendence as well))
+// ^^ might tell the websocket you are joining
+PUT — update event (organizer)
+DELETE — delete event (organizer)
+
+
+upload routes
+POST — upload image
+DELETE — delete image
 
 
 user routes
@@ -50,7 +57,10 @@ DELETE - delete user
 
 
 attendee routes
+POST - create attendee (when user/guest joins event (after onboarded))
 GET — get attendee details
+GET - get all attendees for event
+GET - get all events for user
 PUT — update attendee details 
 
 ————————————————
