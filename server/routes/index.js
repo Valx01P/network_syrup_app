@@ -12,7 +12,7 @@ router.use('/auth', authRoutes)
 router.use('/events', eventRoutes)
 router.use('/users', userRoutes)
 router.use('/attendees', attendeeRoutes)
-router.use('/uploads', uploadRoutes)
+router.use('/upload', uploadRoutes)
 
 // Health check endpoint
 router.get('/health', (req, res) => {
