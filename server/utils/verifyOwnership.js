@@ -10,15 +10,20 @@ const verifyOwnership = (jwt_user, user_id) => {
     if (!jwt_user) {
       return { status: 401, message: 'Authentication required' }
     }
+
     console.log('Requested user ID:', user_id)
     if (jwt_user.userId.toLowerCase() !== user_id.toLowerCase()) {
       return { status: 403, message: 'Access denied - you can only modify your own account' }
     }
+
     console.log('Ownership verified')
     return { status: 200, message: 'Ownership verified' }
+
   } catch (error) {
+
     console.error('User ownership verification error:', error)
     return { status: 500, message: 'Internal server error during authorization' }
+  
   }
 }
 

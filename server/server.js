@@ -3,6 +3,8 @@ import http from 'http'
 import cors from 'cors'
 import dotenv from 'dotenv'
 import cookieParser from 'cookie-parser'
+import passport from 'passport'
+import { configurePassport } from './config/passport.js'
 // Import your routes
 import httpRoutes from './routes/index.js'
 // Import the socket setup function
@@ -28,6 +30,10 @@ app.use(cors(corsOptions))
 app.use(cookieParser())
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
+app.use(passport.initialize())
+
+// Configure Passport
+configurePassport()
 
 // Mount all routes under /api
 app.use('/api', httpRoutes)

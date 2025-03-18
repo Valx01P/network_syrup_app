@@ -25,6 +25,17 @@ const initDB = async () => {
 //     }
 // }
 
+/*
+  When a user is created the only fields that will be filled are:
+  - google_id OR linkedin_id
+  - first_name
+  - last_name
+  - email
+  - profile_image_url
+  - created_at
+  - last_login
+  
+*/
 const createUserTableQuery = `
 CREATE TABLE IF NOT EXISTS users (
     id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
