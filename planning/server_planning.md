@@ -1,3 +1,4 @@
+```js
 /*
 sockets
 ————————————————
@@ -155,3 +156,4 @@ attendees that left the event to be able to see the other attendees that are sti
 the event since they won't be able to interact with them in person.
 
 */
+```

@@ -43,6 +43,6 @@ initSockets(httpServer, corsOptions)
 
 // Start listening
 const PORT = process.env.PORT || 3000
-server.listen(PORT, () => {
+httpServer.listen(PORT, () => {
   console.log(`Server listening on port ${PORT}`)
 })
